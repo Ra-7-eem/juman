@@ -1,0 +1,3055 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>جمان للأثاث والمطابخ | تصميم فاخر للمطابخ والأثاث</title>
+	<meta name="description" content="جمان للأثاث والمطابخ - تصميم وتنفيذ المطابخ والأثاث الداخلي بأسلوب عصري وجودة عالية مع خبرة أكثر من 24 سنة." />
+	<link rel="icon" type="image/png" href="./media/logo2.png" />
+	<link rel="apple-touch-icon" href="./media/logo2.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=El+Messiri:wght@500;700&display=swap" rel="stylesheet" />
+	<style>
+		:root {
+			--bg: #ffffff;
+			--paper: #f8f7f4;
+			--surface: #fcfbf8;
+			--ink: #232221;
+			--muted: #6f6a62;
+			--gold: #b08a51;
+			--gold-soft: #d4b27c;
+			--line: #e7e1d7;
+			--wood: #7a5d3b;
+			--shadow-soft: 0 12px 30px rgba(34, 31, 27, 0.09);
+			--shadow-lg: 0 24px 60px rgba(34, 31, 27, 0.14);
+			--radius: 20px;
+			--radius-lg: 30px;
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		html {
+			scroll-behavior: smooth;
+			scroll-padding-top: 10px;
+		}
+
+		body {
+			font-family: "Cairo", sans-serif;
+			background: var(--bg);
+			color: var(--ink);
+			line-height: 1.8;
+			overflow-x: hidden;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+		}
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.container {
+			width: min(1140px, 92vw);
+			margin-inline: auto;
+		}
+
+		.section {
+			padding: 5.5rem 0;
+			position: relative;
+		}
+
+		.section-title {
+			font-family: "El Messiri", serif;
+			font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+			line-height: 1.25;
+			margin-bottom: 1rem;
+			color: #1f1d1b;
+		}
+
+		.section-text {
+			color: var(--muted);
+			font-size: 1.05rem;
+			max-width: 720px;
+		}
+
+		.topbar {
+			position: sticky;
+			top: 0;
+			z-index: 90;
+			background: linear-gradient(135deg, rgba(35, 34, 33, 0.95) 0%, rgba(50, 48, 45, 0.95) 100%);
+			backdrop-filter: blur(12px);
+			border-bottom: 1px solid transparent;
+			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			/* shadow: none; */
+		}
+        
+		.topbar.scrolled {
+            border: 1px solid rgba(212, 178, 124, 0.15);
+			box-shadow: 0 12px 40px rgba(34, 31, 27, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+		}
+
+		.nav-wrap {
+			min-height: 76px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1.2rem;
+		}
+
+		.brand {
+			display: flex;
+			align-items: center;
+			gap: 0.8rem;
+			font-family: "El Messiri", serif;
+			font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+			font-weight: 700;
+			color: var(--gold-soft);
+			text-decoration: none;
+			transition: all 0.3s ease;
+			padding: 0.5rem 1rem;
+			border-radius: 10px;
+		}
+
+		.brand:hover {
+			color: #fff;
+			transform: translateY(-2px);
+			text-shadow: 0 8px 20px rgba(212, 178, 124, 0.25);
+		}
+
+		.brand-logo {
+			width: clamp(80px, 10vw, 130px);
+			height: auto;
+			border-radius: 8px;
+			object-fit: contain;
+			background: transparent;
+			box-shadow: none;
+			padding: 0;
+			transition: all 0.3s ease;
+			filter: drop-shadow(0 4px 12px rgba(212, 178, 124, 0.1));
+		}
+
+		.brand:hover .brand-logo {
+			filter: drop-shadow(0 8px 24px rgba(212, 178, 124, 0.25));
+		}
+
+		.brand-dot {
+			display: none;
+		}
+
+		/* Mobile nav toggle */
+		.nav-toggle {
+			display: none;
+			align-items: center;
+			justify-content: center;
+			width: 44px;
+			height: 44px;
+			border-radius: 8px;
+			background: rgba(255,255,255,0.04);
+			border: 1px solid rgba(255,255,255,0.06);
+			color: #fff;
+			cursor: pointer;
+		}
+
+		.nav-links {
+			display: flex;
+			align-items: center;
+			gap: 1.25rem;
+			font-weight: 600;
+			color: white;
+			font-size: 0.95rem;
+		}
+
+		.nav-links a {
+			transition: all 0.3s ease;
+			position: relative;
+			padding-bottom: 6px;
+			display: inline-flex;
+			align-items: center;
+			min-height: 44px;
+		}
+
+		.nav-links a::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: linear-gradient(90deg, var(--gold-soft), var(--gold));
+			transition: width 0.3s ease;
+		}
+
+		.nav-links a:hover {
+			color: var(--gold-soft);
+			transform: translateY(-2px);
+		}
+
+		.nav-links a:hover::after {
+			width: 100%;
+		}
+
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 44px;
+			border-radius: 999px;
+			padding: 0.85rem 1.5rem;
+			border: 1px solid transparent;
+			font-weight: 700;
+			font-size: 0.95rem;
+			transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+			cursor: pointer;
+		}
+
+		.btn:focus-visible {
+			outline: 3px solid rgba(176, 138, 81, 0.35);
+			outline-offset: 2px;
+		}
+
+		.btn-gold {
+			background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+			color: #fff;
+			box-shadow: 0 12px 28px rgba(176, 138, 81, 0.32);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.btn-gold::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background: rgba(255, 255, 255, 0.15);
+			transition: left 0.4s ease;
+			z-index: 0;
+		}
+
+		.btn-gold:hover::before {
+			left: 100%;
+		}
+
+		.btn-gold:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 16px 36px rgba(176, 138, 81, 0.4);
+		}
+
+
+		.btn-outline {
+			background: #fff;
+			color: #3b342d;
+			border-color: var(--line);
+		}
+
+		.btn-outline:hover {
+			border-color: var(--gold);
+			color: var(--gold);
+			transform: translateY(-2px);
+		}
+
+		.hero {
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+			position: relative;
+			isolation: isolate;
+			min-height: calc(100vh - 76px);
+			display: flex;
+			flex-direction: column;
+			background: #2c3139; 
+		}
+
+		.hero::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: transparent;
+			z-index: -2;
+		}
+
+		.hero-grid {
+			display: grid;
+			grid-template-columns: 1.2fr 0.8fr;
+			align-items: stretch;
+			gap: 0;
+			flex: 1;
+			min-height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		.hero-panel {
+			background-image: url('./media/leftSideHeroSection.png');
+			background-size: cover;
+			background-position: center;
+			border-radius: 0;
+			padding: clamp(3rem, 5vw, 4rem);
+			color: #fff;
+			box-shadow: none;
+			position: relative;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.hero-panel::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			/* background: linear-gradient(270deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)); */
+			background: linear-gradient(270deg, rgba(0,0,0,0.95), rgba(212,175,55,0.1));
+			pointer-events: none;
+		}
+
+		.hero-panel > * {
+			position: relative;
+			z-index: 1;
+		}
+
+		.hero-badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.4rem;
+			border: 1px solid rgba(255, 255, 255, 0.35);
+			background: rgba(255, 255, 255, 0.08);
+			color: #f5ebdb;
+			border-radius: 999px;
+			padding: 0.35rem 0.8rem;
+			font-size: 0.83rem;
+			margin-bottom: 1rem;
+		}
+
+		.hero-title {
+			font-family: "El Messiri", serif;
+			font-size: clamp(2rem, 4vw, 3.4rem);
+			line-height: 1.3;
+			margin-bottom: 0.9rem;
+		}
+
+		.hero-subtitle {
+			max-width: 40ch;
+			color: rgba(255, 255, 255, 0.92);
+			margin-bottom: 1.4rem;
+		}
+
+		.hero-actions {
+			display: flex;
+			gap: 0.8rem;
+			flex-wrap: wrap;
+		}
+
+		.hero-image-wrap {
+			border-radius: 0;
+			overflow: hidden;
+			box-shadow: none;
+			position: relative;
+			min-height: 100%;
+		}
+
+		.hero-image-wrap img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transform: scale(1);
+		}
+
+		.hero-image-wrap::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: transparent;
+		}
+
+		.about {
+			background: linear-gradient(180deg, #1a1917 0%, #0f0e0d 100%);
+			/* background-color: white; */
+			color: #e9eef0;
+			position: relative;
+			overflow: hidden;
+			padding: 3.5rem 0;
+			margin-top: 0;
+			border-top: 1px solid rgba(255,255,255,0.03);
+			border-bottom: 1px solid rgba(255,255,255,0.03);
+		}
+
+		#about {
+			scroll-margin-top: 50px;
+		}
+
+
+		.about .section-text {
+			color: rgba(255,255,255,0.9);
+		}
+		.about-grid {
+			display: grid;
+			grid-template-columns: minmax(0, 1.55fr) minmax(230px, 0.85fr);
+			gap: 2.4rem;
+			align-items:center;
+			max-width: 1200px;
+			margin-inline: auto;
+		}
+
+		.about-stat {
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			padding:1.2rem;
+		}
+
+		.stat-box {
+			position: relative;
+            background: none;
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			padding: 1.35rem 1.7rem;
+			border-radius: 0;
+			text-align: center;
+			min-width: 170px;
+
+            --corner-size: 40px;   
+            --corner-thickness: 3px;
+            background-image:
+                linear-gradient(var(--gold-soft), var(--gold-soft)),
+                linear-gradient(var(--gold-soft), var(--gold-soft)),
+                linear-gradient(var(--gold-soft), var(--gold-soft)),
+                linear-gradient(var(--gold-soft), var(--gold-soft)),
+                linear-gradient(var(--gold-soft), var(--gold-soft)),
+                linear-gradient(var(--gold-soft), var(--gold-soft)),
+                linear-gradient(var(--gold-soft), var(--gold-soft)),
+                linear-gradient(var(--gold-soft), var(--gold-soft));
+
+            background-size:
+                calc(var(--corner-size) + 1px) var(--corner-thickness),
+                var(--corner-thickness) calc(var(--corner-size) + 25px),
+
+                calc(var(--corner-size) + 1px) var(--corner-thickness),
+                var(--corner-thickness) calc(var(--corner-size) + 25px),
+
+                calc(var(--corner-size) + 1px) var(--corner-thickness),
+                var(--corner-thickness) calc(var(--corner-size) + 25px),
+
+                calc(var(--corner-size) + 1px) var(--corner-thickness),
+                var(--corner-thickness) calc(var(--corner-size) + 25px);
+
+
+            background-position:
+                top left, top left,
+                top right, top right,
+                bottom left, bottom left,
+                bottom right, bottom right;
+
+			background-repeat: no-repeat;
+		}
+        
+        .stat-box {
+            transition: all 0.35s ease;
+        }
+        .stat-box:hover {
+            --corner-size: 55px;
+            transform: translateY(-5px);
+        }
+
+		.about .stat-num {
+			color: #e5bf79;
+			text-shadow: 0 4px 16px rgba(229, 191, 121, 0.28);
+		}
+
+		.stat-num {
+			font-family: "El Messiri", serif;
+			font-size: clamp(2.6rem, 5.6vw, 4.2rem);
+			color: var(--gold-soft);
+			font-weight: 800;
+			line-height: 1;
+		}
+
+		.stat-meta {
+			color: rgba(255,255,255,0.85);
+			font-size: 0.95rem;
+			margin-top: 0.35rem;
+		}
+
+		.about-head .section-title {
+			color: #ffffff;
+            padding-top: 5%;
+			font-size: clamp(2rem, 5vw, 3.8rem);
+			font-weight: 400;
+			text-shadow: 0 6px 20px rgba(0,0,0,0.45);
+		}
+
+		.about-body {
+			color: rgba(255,255,255,0.95);
+			font-size: 1.05rem;
+			line-height: 1.9;
+			max-width: 680px;
+			margin-inline-start: auto;
+			font-weight: 500;
+		}
+
+		.about-eyebrow {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			font-size: 0.95rem;
+			letter-spacing: 0.12em;
+			font-weight: 800;
+			color: var(--gold-soft);
+			margin-bottom: 0.75rem;
+			text-transform: uppercase;
+		}
+
+		.about-cta {
+			display: inline-flex;
+			margin-top: 1rem;
+		}
+
+		.about-highlight::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background:
+				radial-gradient(circle at 95% 8%, rgba(176, 138, 81, 0.16), transparent 35%),
+				radial-gradient(circle at 15% 85%, rgba(122, 93, 59, 0.1), transparent 36%);
+			pointer-events: none;
+		}
+
+		.about-highlight > * {
+			position: relative;
+			z-index: 1;
+		}
+
+		.highlight-text {
+			font-family: "El Messiri", serif;
+			font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+			line-height: 1.35;
+			color: #282420;
+			max-width: 12ch;
+		}
+
+		.exp-badge {
+			display: inline-flex;
+			margin-top: 1.4rem;
+			border-radius: 16px;
+			border: 1px solid rgba(176, 138, 81, 0.35);
+			background: rgba(176, 138, 81, 0.08);
+			color: #3e3326;
+			padding: 0.75rem 1rem;
+			font-weight: 800;
+		}
+
+		#portfolio {
+			background: linear-gradient(180deg, #131722 0%, #11151f 100%);
+			color: #fff;
+			position: relative;
+			overflow: hidden;
+		}
+
+		#portfolio-canvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			z-index: 0;
+			display: block;
+		}
+
+		#portfolio::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background:
+				radial-gradient(circle at 10% 18%, rgba(255,255,255,0.04), transparent 28%),
+				radial-gradient(circle at 92% 84%, rgba(255,255,255,0.03), transparent 22%);
+			pointer-events: none;
+		}
+
+		#portfolio > .container {
+			position: relative;
+			z-index: 1;
+		}
+
+		#portfolio .section-title {
+			color: #fff;
+			text-align: center;
+			font-size: clamp(2rem, 4vw, 3.3rem);
+			margin-bottom: 0.35rem;
+		}
+
+		#portfolio .section-text {
+			color: rgba(255,255,255,0.68);
+			text-align: center;
+			max-width: 620px;
+			margin: 0 auto 2rem;
+		}
+
+
+
+		.portfolio-grid {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			gap: 1.5rem;
+			margin-top: 2rem;
+		}
+
+		.portfolio-item {
+			position: relative;
+			overflow: hidden;
+			border-radius: 16px;
+			height: 380px;
+			background: #242933;
+			box-shadow: 0 16px 28px rgba(0,0,0,0.18);
+			cursor: pointer;
+			transition: all 0.4s ease;
+			border: 1px solid rgba(255,255,255,0.05);
+		}
+
+		.portfolio-item::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(to top, rgba(17,21,31,0.95) 0%, rgba(17,21,31,0.4) 40%, transparent 100%);
+			z-index: 1;
+			opacity: 0.7;
+			transition: opacity 0.4s ease;
+		}
+
+		.portfolio-item:hover::before {
+			opacity: 0.95;
+		}
+
+		.portfolio-item img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.65s cubic-bezier(0.2, 0, 0, 1);
+		}
+
+		.portfolio-item:hover img {
+			transform: scale(1.1) rotate(1deg);
+		}
+
+		.portfolio-item:hover {
+			transform: translateY(-8px);
+			box-shadow: 0 25px 45px rgba(0,0,0,0.4);
+			border-color: rgba(176, 138, 81, 0.4);
+		}
+
+		.portfolio-label {
+			position: absolute;
+			bottom: 1.5rem;
+			right: 1.5rem;
+			z-index: 2;
+			color: #fff;
+			font-family: "El Messiri", serif;
+			font-size: 1.15rem;
+			font-weight: 700;
+			line-height: 1.25;
+			transform: translateY(15px);
+			transition: transform 0.4s ease, opacity 0.4s ease;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.portfolio-label span {
+			font-family: "Cairo", sans-serif;
+			font-size: 0.8rem;
+			color: var(--gold-soft);
+			font-weight: 700;
+			letter-spacing: 1px;
+			margin-bottom: 0.2rem;
+			opacity: 0;
+			transform: translateY(10px);
+			transition: all 0.4s ease 0.1s;
+		}
+
+		.portfolio-item:hover .portfolio-label {
+			transform: translateY(0);
+		}
+
+		.portfolio-item:hover .portfolio-label span {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.portfolio-icon {
+			position: absolute;
+			top: 1.5rem;
+			left: 1.5rem;
+			z-index: 2;
+			width: 44px;
+			height: 44px;
+			border-radius: 50%;
+			background: rgba(176, 138, 81, 0.9);
+			color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 0;
+			transform: scale(0.5);
+			transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+			backdrop-filter: blur(4px);
+			cursor: pointer;
+		}
+
+		.portfolio-icon svg {
+			width: 20px;
+			height: 20px;
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 2;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+		}
+
+		.portfolio-item:hover .portfolio-icon {
+			opacity: 1;
+			transform: scale(1);
+		}
+
+		.portfolio-icon:hover {
+			background: rgba(255, 255, 255, 0.9);
+			color: var(--gold);
+			transform: scale(1.1) !important;
+		}
+
+		/* Lightbox Styles */
+		.lightbox {
+			position: fixed;
+			inset: 0;
+			background: rgba(15, 17, 24, 0.95);
+			backdrop-filter: blur(10px);
+			z-index: 9999;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.4s ease;
+		}
+
+		.lightbox.active {
+			opacity: 1;
+			pointer-events: all;
+		}
+
+		.lightbox-content {
+			position: relative;
+			max-width: 90%;
+			max-height: 85vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transform: scale(0.95);
+			transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		}
+
+		.lightbox.active .lightbox-content {
+			transform: scale(1);
+		}
+
+		.lightbox img {
+			max-width: 100%;
+			max-height: 80vh;
+			object-fit: contain;
+			border-radius: 12px;
+			box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+			border: 1px solid rgba(255,255,255,0.1);
+		}
+
+		.lightbox-title {
+			color: #fff;
+			font-family: "El Messiri", serif;
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+			text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+			text-align: center;
+		}
+
+		.lightbox-close {
+			position: absolute;
+			top: -40px;
+			right: -20px;
+			color: rgba(255,255,255,0.7);
+			font-size: 2.5rem;
+			cursor: pointer;
+			transition: color 0.3s ease, transform 0.3s ease;
+			line-height: 1;
+		}
+
+		.lightbox-close:hover {
+			color: #fff;
+			transform: rotate(90deg);
+		}
+
+
+		.portfolio-link {
+			position: absolute;
+			bottom: 1rem;
+			left: 1rem;
+			z-index: 2;
+			padding: 0.45rem 0.9rem;
+			border-radius: 999px;
+			border: 1px solid rgba(255,255,255,0.28);
+			background: rgba(255,255,255,0.05);
+			color: #fff;
+			font-size: 0.82rem;
+			font-weight: 700;
+		}
+
+
+
+		.about > .container:last-child {
+			/* background-image: linear-gradient(180deg, rgba(26, 25, 23, 0.83) 0%, rgba(15, 14, 13, 0.6) 100%), url('./media/statsSection.png'); */
+			background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(15, 14, 13, 0.75) 40%, rgba(0, 0, 0, 0.25) 100%), url('./media/statsSection.png');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			border-radius: 28px;
+			padding: 1.5rem 1.2rem;
+			margin-top: 1.2rem;
+			box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+		}
+
+		.stats-grid {
+			display: grid;
+			grid-template-columns: repeat(4, minmax(120px, 1fr));
+			gap: 2rem;
+			align-items: center;
+			justify-items: center;
+			max-width: 1100px;
+			margin: 0 auto;
+		}
+
+		.stat-card {
+			/* background: rgba(13, 12, 11, 0.32);
+			backdrop-filter: blur(4px); */
+			background: none;
+			border: none;
+			border-radius: 18px;
+			text-align: center;
+			padding: 1rem 0.8rem;
+			min-width: 0;
+			box-shadow: none;
+			transition: transform 320ms cubic-bezier(.2,.9,.2,1), filter 240ms ease;
+		}
+
+		.stat-card:hover {
+			transform: translateY(-6px) scale(1.02);
+			filter: brightness(1.02);
+		}
+
+		.stat-num {
+			font-family: "El Messiri", serif;
+			font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+			line-height: 1;
+			color: var(--gold-soft);
+			margin-bottom: 0.6rem;
+			font-weight: 800;
+			display: inline-block;
+			position: relative;
+			transform: translateY(8px);
+			opacity: 0;
+			transition: transform 420ms cubic-bezier(.2,.9,.2,1), opacity 320ms ease;
+		}
+
+		.stat-num::before {
+			content: "+";
+			margin-inline-end: 0.45rem;
+			color: var(--gold-soft);
+			font-weight: 800;
+		}
+
+		@keyframes pop {
+			0% { transform: scale(0.86); opacity: 0.6; }
+			60% { transform: scale(1.06); opacity: 1; }
+			100% { transform: scale(1); opacity: 1; }
+		}
+
+		.count-done .stat-num {
+			animation: pop 520ms cubic-bezier(.2,.9,.2,1) both;
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		/* About stat box appears immediately - no reveal delay */
+		.about-stat .stat-num {
+			opacity: 1 !important;
+			transform: translateY(0) !important;
+		}
+
+		/* Confetti canvas */
+		.confetti-canvas {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			z-index: 9999;
+		}
+
+		.stat-card.visible .stat-num,
+		.stat-box.visible .stat-num {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.stat-label {
+			color: rgba(255,255,255,0.92);
+			font-weight: 600;
+			font-size: 1rem;
+			line-height: 1.4;
+		}
+
+		#marketing {
+			background: #f5f5f5;
+			padding: 5.5rem 0;
+		}
+
+		.marketing-grid {
+			display: grid;
+			grid-template-columns: 1.05fr 0.95fr;
+			gap: 3rem;
+			align-items: stretch;
+		}
+
+		.marketing-images {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1.5rem;
+			width: 100%;
+			margin-top: 2rem;
+		}
+
+		.marketing-image-item {
+			width: 100%;
+			height: clamp(160px, 24vw, 250px);
+			min-height: 160px;
+			border-radius: 14px;
+			overflow: hidden;
+			border: none;
+			box-shadow: none;
+		}
+
+		.marketing-image-item img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+
+		.marketing-image {
+			border-radius: 20px;
+			overflow: hidden;
+			border: none;
+			box-shadow: none;
+			height: 100%;
+			min-height: clamp(320px, 52vw, 600px);
+			display: block;
+			position: relative;
+		}
+
+		.marketing-image img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+
+		.marketing-card {
+			background: transparent;
+			border: none;
+			border-radius: 0;
+			padding: 0;
+			box-shadow: none;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.marketing-card .section-title {
+			color: #2d2d2d;
+			font-size: 2.3rem;
+			font-family: "Cairo", sans-serif;
+			font-weight: 400;
+			margin-bottom: 1.5rem;
+		}
+
+		.marketing-card > p {
+			color: #666666;
+			font-size: 1.1rem;
+			line-height: 1.9;
+			margin-bottom: 1.5rem;
+		}
+
+		.marketing-list {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: grid;
+			gap: 1.1rem;
+		}
+
+		.marketing-list li {
+			display: flex;
+			align-items: center;
+			gap: 0.8rem;
+			color: #888888;
+			font-size: 1.05rem;
+		}
+		.marketing-list li::before {
+			content: "→";
+			color: #999999;
+			font-weight: 600;
+		}
+
+		.testimonials {
+			border-top: 1px solid var(--line);
+			border-bottom: 1px solid var(--line);
+			background: linear-gradient(180deg, #131722 0%, #11151f 100%);
+			overflow: hidden;
+			position: relative;
+			color: #fff;
+		}
+
+		#testimonials-canvas {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			z-index: 0;
+			display: block;
+		}
+
+		.testimonials-wrap {
+			position: relative;
+			z-index: 1;
+		}
+
+		.testimonials-wrap::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background:
+				radial-gradient(circle at 10% 18%, rgba(255,255,255,0.04), transparent 28%),
+				radial-gradient(circle at 92% 84%, rgba(255,255,255,0.03), transparent 22%);
+			pointer-events: none;
+			z-index: 0;
+		}
+
+		.eyebrow {
+			display: inline-flex;
+			font-size: 0.78rem;
+			letter-spacing: 0.18em;
+			font-weight: 700;
+			color: var(--gold);
+			text-transform: uppercase;
+			margin-bottom: 0.75rem;
+		}
+
+		.testimonials .section-title {
+			color: #fff;
+		}
+
+		.testimonials .section-text {
+			color: rgba(255,255,255,0.68);
+		}
+
+		#testimonialsCarousel {
+			position: relative;
+			margin-top: 2.2rem;
+			max-width: 840px;
+			margin-inline: auto;
+		}
+
+		#testimonialsTrack {
+			display: flex;
+			transition: transform 1s ease-in-out;
+		}
+
+		.testimonial-slide {
+			min-width: 100%;
+		}
+
+		.testimonial-box {
+			margin: 0 0.4rem;
+			border-radius: var(--radius-lg);
+			border: 1px solid rgba(255,255,255,0.1);
+			background: rgba(19, 23, 34, 0.6);
+			backdrop-filter: blur(10px);
+			padding: 1.8rem;
+			box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			color: rgba(255,255,255,0.9);
+        }
+
+		.testimonial-box:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 22px 50px rgba(212, 178, 124, 0.15);
+		}
+
+		.testimonial-head {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: 1rem;
+		}
+
+		.avatar-group {
+			display: flex;
+			align-items: center;
+			gap: 0.9rem;
+		}
+
+		.avatar {
+			width: 56px;
+			height: 56px;
+			border-radius: 50%;
+			background: linear-gradient(145deg, #e6cda4, #b08a51);
+			color: #fff;
+			display: grid;
+			place-items: center;
+			font-weight: 800;
+			border: 2px solid rgba(176, 138, 81, 0.45);
+			transition: transform 0.3s ease;
+		}
+
+		.testimonial-box:hover .avatar {
+			transform: scale(1.06);
+		}
+
+		.client-name {
+			font-weight: 700;
+			color: #fff;
+		}
+
+		.quote-icon {
+			color: rgba(176, 138, 81, 0.85);
+			width: 34px;
+			height: 34px;
+			flex-shrink: 0;
+		}
+
+		.stars {
+			margin-top: 1rem;
+			color: var(--gold);
+			font-size: 1.08rem;
+			letter-spacing: 0.08em;
+			user-select: none;
+		}
+
+		.testimonial-text {
+			margin-top: 0.9rem;
+			color: rgba(255,255,255,0.8);
+			font-size: 1.02rem;
+		}
+
+		.testimonial-controls {
+			margin-top: 1.2rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 0.8rem;
+		}
+
+		.nav-btn {
+			width: 45px;
+			height: 45px;
+			border-radius: 50%;
+			border: 1px solid rgba(212, 178, 124, 0.3);
+			background: rgba(212, 178, 124, 0.1);
+			color: var(--gold-soft);
+			display: grid;
+			place-items: center;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.nav-btn:hover {
+			border-color: var(--gold);
+			color: var(--gold);
+			transform: translateY(-2px);
+		}
+
+		#testimonialDots {
+			display: flex;
+			gap: 0.45rem;
+			align-items: center;
+		}
+
+		#testimonialDots button {
+			border: 0;
+			border-radius: 999px;
+			width: 10px;
+			height: 10px;
+			background: rgba(212, 178, 124, 0.3);
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		#testimonialDots button.active {
+			width: 34px;
+			background: var(--gold);
+		}
+
+		.contact-wrap {
+			display: grid;
+			grid-template-columns: 0.9fr 1.1fr;
+			gap: 1.4rem;
+			align-items: stretch;
+		}
+
+		#portfolio .portfolio-head {
+			margin-bottom: clamp(2rem, 4vw, 3.5rem) !important;
+		}
+
+		.marketing-card,
+		.contact-card,
+		.contact-form {
+			min-width: 0;
+		}
+
+		.contact-card,
+		.contact-form {
+			border: 1px solid var(--line);
+			border-radius: var(--radius);
+			background: #fff;
+			box-shadow: var(--shadow-soft);
+			padding: 1.8rem;
+		}
+
+		.contact-list {
+			margin-top: 1.2rem;
+			display: grid;
+			gap: 0.7rem;
+		}
+
+		.contact-item {
+			background: #fbfaf7;
+			border: 1px solid #eee5d8;
+			border-radius: 14px;
+			padding: 0.85rem;
+		}
+
+		.contact-label {
+			color: #837768;
+			font-size: 0.83rem;
+			font-weight: 700;
+			margin-bottom: 0.15rem;
+		}
+
+		.form-grid {
+			display: grid;
+			gap: 0.9rem;
+		}
+
+		.field {
+			display: grid;
+			gap: 0.35rem;
+		}
+
+		.field label {
+			font-size: 0.94rem;
+			font-weight: 700;
+			color: #4f493f;
+		}
+
+		.field input,
+		.field textarea {
+			border: 1px solid #e8dece;
+			border-radius: 13px;
+			background: #fff;
+			color: #2a2723;
+			padding: 0.78rem 0.9rem;
+			font-family: inherit;
+			font-size: 0.96rem;
+			transition: border-color 0.25s ease, box-shadow 0.25s ease;
+		}
+
+		.field input:focus,
+		.field textarea:focus {
+			outline: none;
+			border-color: var(--gold);
+			box-shadow: 0 0 0 4px rgba(176, 138, 81, 0.13);
+		}
+
+		.form-note {
+			margin-top: 0.65rem;
+			color: #7a7167;
+			font-size: 0.9rem;
+		}
+
+		.footer {
+			background: linear-gradient(180deg, #1a1917 0%, #0f0e0d 100%);
+			border-top: 1px solid rgba(212, 178, 124, 0.15);
+			padding: 3.5rem 0 1.5rem;
+			color: rgba(255, 255, 255, 0.7);
+
+			/* background: linear-gradient(180deg, #0b1a2a 0%, #07121d 100%);
+			border-top: 1px solid rgba(212, 178, 124, 0.2);
+			padding: 3.5rem 0 1.5rem; 
+			color: rgba(255, 255, 255, 0.75);
+			box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3); */
+		}  
+
+		.footer .container {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			gap: 2.5rem;
+			padding-bottom: 2rem;
+			border-bottom: 1px solid rgba(212, 178, 124, 0.1);
+			margin-bottom: 2rem;
+		}
+
+		.footer-col h3 {
+			font-size: 0.95rem;
+			font-weight: 700;
+			color: var(--gold-soft);
+			margin-bottom: 1.2rem;
+			display: flex;
+			align-items: center;
+			gap: 0.8rem;
+		}
+
+		.footer-col ul {
+			list-style: none;
+			display: flex;
+			flex-direction: column;
+			gap: 0.85rem;
+		}
+
+		.footer-col a {
+			color: rgba(255, 255, 255, 0.6);
+			text-decoration: none;
+			font-size: 0.9rem;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+		}
+
+		.footer-col a::before {
+			content: '›';
+			color: var(--gold);
+			font-weight: bold;
+			margin-left: 0.3rem;
+			transition: transform 0.3s ease;
+		}
+
+		.footer-col a:hover {
+			color: var(--gold-soft);
+			transform: translateX(-8px);
+		}
+
+		.footer-col a:hover::before {
+			transform: translateX(4px);
+		}
+
+		.footer-logo {
+			width: auto;
+			height: auto;
+			margin-bottom: 1rem;
+			object-fit: contain;
+		}
+
+		.footer-about {
+			font-size: 0.9rem;
+			line-height: 1.8;
+			color: rgba(255, 255, 255, 0.65);
+			margin-top: 0.5rem;
+		}
+
+		.social-links {
+			display: flex;
+			gap: 0.8rem;
+			margin-top: 1.8rem;
+			flex-wrap: wrap;
+		}
+
+		.social-links .social-icon {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background: linear-gradient(135deg, rgba(212, 178, 124, 0.15), rgba(176, 138, 81, 0.1));
+			display: grid;
+			place-items: center;
+			color: var(--gold-soft);
+			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			border: 1.5px solid rgba(212, 178, 124, 0.3);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.social-links .social-icon::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 0;
+			height: 0;
+			background: radial-gradient(circle, rgba(212, 178, 124, 0.4), transparent);
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+			transition: width 0.6s ease, height 0.6s ease;
+		}
+
+		.social-links .social-icon svg {
+			width: 24px;
+			height: 24px;
+			transition: transform 0.3s ease, filter 0.3s ease;
+			position: relative;
+			z-index: 1;
+		}
+
+		.social-links .social-icon:hover {
+			background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+			color: #fff;
+			border-color: var(--gold);
+			box-shadow: 0 12px 32px rgba(212, 178, 124, 0.3);
+			transform: translateY(-6px);
+		}
+
+		.social-links .social-icon:hover::before {
+			width: 100px;
+			height: 100px;
+		}
+
+		.social-links .social-icon:hover svg {
+			transform: scale(1.15) rotate(8deg);
+			filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+		}
+
+		.footer-bottom {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 0.85rem;
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		.footer-dev-credit {
+			margin-top: 1.6rem;
+			padding-top: 1.4rem;
+			border-top: 1px solid rgba(212, 178, 124, 0.12);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+		}
+
+		.dev-badge {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0.75rem;
+			padding: 0.55rem 1.6rem;
+			background: linear-gradient(135deg, rgba(28, 26, 24, 0.85) 0%, rgba(18, 17, 16, 0.95) 100%);
+			border: 1px solid rgba(212, 178, 124, 0.45);
+			border-radius: 999px;
+			text-decoration: none;
+			color: #e5e2dc;
+			font-size: 0.9rem;
+			font-weight: 500;
+			box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+			transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+			backdrop-filter: blur(8px);
+		}
+
+		.dev-badge:hover {
+			border-color: var(--gold-soft);
+			background: linear-gradient(135deg, rgba(38, 35, 32, 0.95) 0%, rgba(26, 24, 22, 0.98) 100%);
+			box-shadow: 0 10px 28px rgba(176, 138, 81, 0.28), inset 0 0 16px rgba(212, 178, 124, 0.12);
+			transform: translateY(-2px);
+			color: #ffffff;
+		}
+
+		.dev-text {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.35rem;
+			color: rgba(255, 255, 255, 0.9);
+		}
+
+		.dev-name {
+			color: var(--gold-soft);
+			font-weight: 700;
+			text-shadow: 0 0 12px rgba(212, 178, 124, 0.35);
+			transition: color 0.3s ease;
+		}
+
+		.dev-badge:hover .dev-name {
+			color: #ffd98a;
+		}
+
+		.dev-sep {
+			color: var(--gold);
+			font-size: 0.65rem;
+			line-height: 1;
+			opacity: 0.85;
+			display: inline-block;
+			transform: scale(0.9);
+		}
+
+		.dev-phone {
+			color: #ffffff;
+			font-weight: 600;
+			direction: ltr;
+			unicode-bidi: embed;
+			letter-spacing: 0.5px;
+			font-family: inherit;
+		}
+
+		.dev-wa-icon {
+			width: 20px;
+			height: 20px;
+			color: #25d366;
+			filter: drop-shadow(0 0 6px rgba(37, 211, 102, 0.45));
+			flex-shrink: 0;
+			transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+		}
+
+		.dev-badge:hover .dev-wa-icon {
+			transform: scale(1.2) rotate(6deg);
+		}
+
+		@media (max-width: 768px) {
+			.footer .container {
+				grid-template-columns: 1fr 1fr;
+				gap: 2rem;
+			}
+
+			.footer-bottom {
+				flex-direction: column;
+				gap: 1rem;
+				text-align: center;
+			}
+
+			.dev-badge {
+				padding: 0.5rem 1.2rem;
+				font-size: 0.84rem;
+				gap: 0.6rem;
+			}
+
+			.dev-wa-icon {
+				width: 18px;
+				height: 18px;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.footer .container {
+				grid-template-columns: 1fr;
+				gap: 2.5rem;
+			}
+
+			.dev-badge {
+				padding: 0.45rem 0.9rem;
+				font-size: 0.78rem;
+				gap: 0.45rem;
+			}
+
+			.dev-phone {
+				font-size: 0.8rem;
+			}
+		}
+
+		.reveal {
+			opacity: 0;
+			transform: translateY(22px);
+			transition: opacity 0.8s ease, transform 0.8s ease;
+		}
+
+		.reveal.visible {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.hero-panel.reveal,
+		.hero-image-wrap.reveal {
+			transform: translateY(26px) scale(0.985);
+		}
+
+		.hero-panel.reveal.visible,
+		.hero-image-wrap.reveal.visible {
+			transform: translateY(0) scale(1);
+		}
+
+		@media (max-width: 1024px) {
+			.hero-grid {
+				grid-template-columns: 1fr;
+				min-height: auto;
+			}
+
+			.hero {
+				min-height: auto;
+			}
+
+			.hero-image-wrap {
+				min-height: 320px;
+			}
+
+			.hero-panel {
+				padding: clamp(2.5rem, 4vw, 3rem);
+				min-height: 280px;
+			}
+
+			.marketing-image {
+				min-height: 350px;
+			}
+
+			.stats-grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+
+
+			.portfolio-grid {
+				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+			}
+
+			.portfolio-item {
+				height: 300px;
+			}
+		}
+
+		@media (max-width: 760px) {
+			.nav-links {
+				display: none;
+			}
+
+			.nav-toggle {
+				display: inline-flex;
+			}
+
+			/* when topbar has .nav-open show mobile menu */
+			.topbar.nav-open .nav-links {
+				display: flex;
+				flex-direction: column;
+				position: absolute;
+				top: 76px;
+				right: 1rem;
+				background: linear-gradient(180deg, rgba(18,18,18,0.99), rgba(24,24,24,0.98));
+				padding: 0.8rem;
+				border-radius: 12px;
+				box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+				z-index: 95;
+			}
+
+			.section {
+				padding: 4rem 0;
+			}
+
+			.hero-actions {
+				width: 100%;
+			}
+
+			.hero-actions .btn {
+				flex: 1 1 220px;
+			}
+
+			.portfolio-grid {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			.portfolio-item {
+				height: 250px;
+			}
+
+			.portfolio-stat {
+				min-height: 110px;
+			}
+
+			.stats-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.testimonial-controls {
+				justify-content: center;
+			}
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			*,
+			*::before,
+			*::after {
+				animation: none !important;
+				transition: none !important;
+				scroll-behavior: auto !important;
+			}
+		}
+
+		/* تحسينات قسم الخدمات للهاتف */
+		@media (max-width: 768px) {
+			.marketing-grid {
+				grid-template-columns: 1fr;
+				gap: 2rem;
+			}
+
+			.marketing-image {
+				min-height: 280px;
+				order: -1;
+			}
+
+			.marketing-card .section-title {
+				font-size: 1.8rem;
+			}
+
+			.marketing-card > p {
+				font-size: 1rem;
+				margin-bottom: 1.2rem;
+			}
+
+			.marketing-images {
+				margin-top: 1.5rem;
+			}
+
+			.marketing-image-item {
+				height: 200px;
+			}
+
+			.marketing-list li {
+				font-size: 0.95rem;
+				gap: 0.6rem;
+			}
+		}
+
+		/* تحسينات قسم الخدمات للهواتف الصغيرة */
+		@media (max-width: 480px) {
+			.marketing-grid {
+				gap: 1.5rem;
+			}
+
+			.marketing-image {
+				min-height: 220px;
+			}
+
+			.marketing-card .section-title {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.marketing-card > p {
+				font-size: 0.95rem;
+				margin-bottom: 1rem;
+				line-height: 1.6;
+			}
+
+			.marketing-images {
+				gap: 1rem;
+				margin-top: 1rem;
+			}
+
+			.marketing-image-item {
+				height: 160px;
+			}
+
+			.marketing-list li {
+				font-size: 0.9rem;
+				gap: 0.5rem;
+			}
+
+			.marketing-list li::before {
+				content: "•";
+			}
+
+			.section {
+				padding: 3rem 0;
+			}
+		}
+
+		@media (max-width: 1024px) {
+			.section {
+				padding: 4.5rem 0;
+			}
+
+			.hero-grid {
+				grid-template-columns: 1fr;
+				min-height: auto;
+			}
+
+			.hero {
+				min-height: auto;
+			}
+
+			.hero-image-wrap {
+				min-height: 320px;
+			}
+
+			.hero-panel {
+				padding: clamp(2.2rem, 4vw, 3rem);
+				min-height: 280px;
+			}
+
+			.about-grid {
+				grid-template-columns: 1fr;
+				gap: 1.25rem;
+			}
+
+			.about-stat {
+				grid-column: 1 / -1;
+				justify-content: flex-start;
+				padding: 0;
+			}
+
+			.about-head .section-title {
+				padding-top: 2rem;
+			}
+
+			.marketing-grid {
+				grid-template-columns: 1fr;
+				gap: 2rem;
+			}
+
+			.marketing-image {
+				min-height: clamp(280px, 48vw, 420px);
+				order: -1;
+			}
+
+			.marketing-card .section-title {
+				font-size: clamp(1.7rem, 3vw, 2.2rem);
+			}
+
+			.stats-grid {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1.25rem;
+			}
+
+			.contact-wrap {
+				grid-template-columns: 1fr;
+			}
+
+			.footer .container {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+		}
+
+		@media (max-width: 760px) {
+			html {
+				scroll-padding-top: 84px;
+			}
+
+			.container {
+				width: min(1140px, calc(100vw - 1.5rem));
+			}
+
+			.nav-links {
+				display: none;
+			}
+
+			.nav-toggle {
+				display: inline-flex;
+			}
+
+			.topbar.nav-open .nav-links {
+				display: flex;
+				flex-direction: column;
+				position: absolute;
+				top: calc(100% + 0.75rem);
+				inset-inline: 0.75rem;
+				background: linear-gradient(180deg, rgba(18,18,18,0.99), rgba(24,24,24,0.98));
+				padding: 0.9rem;
+				border-radius: 12px;
+				box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+				z-index: 95;
+				min-width: 0;
+				width: auto;
+				align-items: stretch;
+			}
+
+			.topbar.nav-open .nav-links a {
+				justify-content: center;
+				padding: 0.8rem 1rem;
+				width: 100%;
+			}
+
+			.section {
+				padding: 4rem 0;
+			}
+
+			.hero-panel {
+				padding: 2.1rem 1.2rem;
+				min-height: auto;
+			}
+
+			.hero-title {
+				font-size: clamp(1.8rem, 8vw, 2.5rem);
+			}
+
+			.hero-subtitle {
+				max-width: none;
+				font-size: 0.98rem;
+			}
+
+			.hero-actions {
+				width: 100%;
+				flex-direction: column;
+			}
+
+			.hero-actions .btn {
+				flex: 1 1 auto;
+				width: 100%;
+			}
+
+			.about-grid {
+				grid-template-columns: 1fr;
+				gap: 1.2rem;
+			}
+
+			.about-stat {
+				justify-content: center;
+			}
+
+			.about-body {
+				max-width: none;
+				margin-inline-start: 0;
+				font-size: 1rem;
+			}
+
+			.stats-grid {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1rem;
+				max-width: 100%;
+			}
+
+			.about > .container:last-child {
+				padding: 1rem;
+				border-radius: 22px;
+				margin-top: 1rem;
+			}
+
+			.stat-card {
+				padding: 0.4rem 0.2rem;
+			}
+
+			.portfolio-head {
+				margin-bottom: 2rem !important;
+			}
+
+			.portfolio-grid {
+				grid-template-columns: 1fr;
+				gap: 1rem;
+			}
+
+			.portfolio-item {
+				height: clamp(220px, 70vw, 300px);
+			}
+
+			.portfolio-label {
+				bottom: 1rem;
+				right: 1rem;
+				font-size: 1rem;
+			}
+
+			.portfolio-icon {
+				top: 1rem;
+				left: 1rem;
+				width: 40px;
+				height: 40px;
+			}
+
+			.marketing-grid {
+				gap: 1.5rem;
+			}
+
+			.marketing-image {
+				min-height: 220px;
+			}
+
+			.marketing-card .section-title {
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.marketing-card > p {
+				font-size: 0.98rem;
+				line-height: 1.7;
+			}
+
+			.marketing-images {
+				grid-template-columns: 1fr;
+				gap: 1rem;
+			}
+
+			.marketing-image-item {
+				height: 180px;
+			}
+
+			.testimonial-box {
+				padding: 1.3rem;
+				margin: 0;
+			}
+
+			.testimonial-head {
+				flex-direction: column;
+			}
+
+			.testimonial-controls {
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+
+			.contact-card,
+			.contact-form {
+				padding: 1.3rem;
+			}
+
+			.footer .container {
+				grid-template-columns: 1fr;
+				gap: 2rem;
+			}
+
+			.footer-bottom > div {
+				flex-direction: column;
+				gap: 0.75rem;
+			}
+
+			.social-links {
+				gap: 0.85rem;
+			}
+
+			.social-links .social-icon {
+				width: 46px;
+				height: 46px;
+			}
+
+			.lightbox-content {
+				max-width: calc(100% - 1rem);
+			}
+
+			.lightbox-close {
+				top: -34px;
+				right: 0;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.section {
+				padding: 3rem 0;
+			}
+
+			.about {
+				padding-inline: 1rem;
+			}
+
+			.about-grid {
+				display: contents;
+			}
+
+			.about {
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-areas:
+					"body body"
+					"head head"
+					"stat stat"
+					"stats stats";
+				gap: 1rem;
+				align-items: center;
+			}
+
+			.about-body {
+				grid-area: body;
+				max-width: none;
+				margin-inline-start: 0;
+			}
+			
+			.about-head {
+				grid-area: head;
+				text-align: center;
+				align-self: center;
+				margin: 0;
+				width: 100%;
+			}
+
+			.about-stat {
+				grid-area: stat;
+				padding: 0;
+				justify-content: center;
+				justify-self: center;
+			}
+
+			.about-stat .stat-box {
+				min-width: 0;
+				width: 100%;
+				padding: 0.9rem 0.8rem;
+			}
+
+			.about > .container {
+				grid-area: stats;
+				width: 100%;
+			}
+
+			.nav-wrap {
+				min-height: 68px;
+			}
+
+			.brand {
+				padding: 0.35rem 0.6rem;
+			}
+
+			.brand-logo {
+				width: clamp(68px, 28vw, 96px);
+			}
+
+			.topbar.nav-open .nav-links {
+				inset-inline: 0.5rem;
+				padding: 0.75rem;
+			}
+
+			.hero-panel {
+				padding: 1.8rem 1rem;
+			}
+
+			.hero-badge {
+				font-size: 0.76rem;
+			}
+
+			.hero-title {
+				font-size: clamp(1.65rem, 9vw, 2.2rem);
+			}
+
+			.hero-subtitle {
+				font-size: 0.94rem;
+			}
+
+			.btn {
+				width: 100%;
+				padding-inline: 1rem;
+			}
+
+			.about-head .section-title,
+			.marketing-card .section-title,
+			#portfolio .section-title,
+			.testimonials .section-title,
+			.contact-card .section-title {
+				font-size: clamp(1.55rem, 7vw, 2rem);
+			}
+
+			.stat-box {
+				min-width: 0;
+				width: 100%;
+				padding: 1rem 1.1rem;
+			}
+
+			.stat-num {
+				font-size: clamp(2rem, 12vw, 3rem);
+			}
+
+			.portfolio-item {
+				height: 220px;
+			}
+
+			.marketing-image {
+				min-height: 200px;
+			}
+
+			.marketing-image-item {
+				height: 160px;
+			}
+
+			.marketing-list li {
+				font-size: 0.92rem;
+			}
+
+			.testimonial-text {
+				font-size: 0.96rem;
+			}
+
+			.avatar {
+				width: 48px;
+				height: 48px;
+			}
+
+			.contact-card,
+			.contact-form {
+				padding: 1.1rem;
+				border-radius: 18px;
+			}
+
+			.footer-bottom {
+				text-align: center;
+			}
+
+			.lightbox-close {
+				top: -30px;
+				font-size: 2rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header class="topbar" id="topbar">
+		<div class="container nav-wrap">
+			<a href="#home" class="brand" aria-label="العودة إلى الأعلى">
+				<img class="brand-logo" src="./media/logo.png" alt="شعار الشركة" loading="eager" decoding="async" />
+			</a>
+			<button id="navToggle" class="nav-toggle" aria-label="قائمة التنقل" title="قائمة">
+				<svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true"><rect y="0" width="20" height="2" rx="1" fill="currentColor"/><rect y="6" width="20" height="2" rx="1" fill="currentColor"/><rect y="12" width="20" height="2" rx="1" fill="currentColor"/></svg>
+			</button>
+			<nav class="nav-links" aria-label="التنقل الرئيسي">
+				<a href="#about">نبذة</a>
+				<a href="#portfolio">أعمالنا</a>
+				<a href="#services">خدماتنا</a>
+				<a href="#testimonials">الآراء</a>
+				<a href="#contact" class="btn btn-gold">اطلب استشارة</a>
+			</nav>
+		</div>
+	</header>
+
+	<main id="home">
+		<section class="hero">
+			<div class="hero-grid">
+				<div class="hero-image-wrap reveal">
+					<img src="./media/rightSideHeroSection.png" alt="تصميم مطبخ فاخر من جمان" fetchpriority="high" decoding="async" />
+				</div>
+				<div class="hero-panel reveal">
+					<span class="hero-badge">تصميم فاخر . تنفيذ احترافي</span>
+					<h1 class="hero-title">جمان للأثاث والمطابخ</h1>
+					<p class="hero-subtitle">نصنع مساحات مطبخ وأثاث داخلي بتوازن مثالي بين الجمال، الأداء اليومي، وجودة التفاصيل.</p>
+					<div class="hero-actions">
+						<a href="#contact" class="btn btn-gold">احجز استشارة الآن</a>
+						<a href="#portfolio" class="btn btn-outline">شاهد معرض الأعمال</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section about" id="about">
+				<div class="about-grid">
+					<div class="about-body reveal">
+						<span class="about-eyebrow">من نحن</span>
+						<p class="section-text">
+                            جمان لتصميم المطابخ والأثاث شركة متخصصة في تصميم وتنفيذ المطابخ والأثاث الداخلي بأسلوب عصري وجودة عالية. نقدم حلولاً مبتكرة تجمع بين الجمال العملي والدقة في التنفيذ، لنحوّل المساحات إلى أماكن أنيقة ومريحة تناسب احتياجات عملائنا.
+						</p>
+						<a href="#contact" class="btn btn-gold about-cta">احجز استشارة الان</a>
+					</div>
+					<div class="about-stat">
+						<div class="stat-box">
+							<div class="stat-num"><span class="counter" data-target="24">0</span></div>
+							<div class="stat-meta">سنة من الخبرة والإبداع</div>
+						</div>
+					</div>
+				</div>
+                <div class="about-head reveal" style="text-align: center;">
+                    <h2 class="section-title">نصمم حلول إبداعية من قبل مصممين محترفين</h2>
+                </div>
+                <div class="container">
+                    <div class="stats-grid">
+						<article class="stat-card reveal">
+							<p class="stat-num"><span class="counter" data-target="245">0</span></p>
+							<p class="stat-label">عدد المطابخ المنجزة</p>
+						</article>
+						<article class="stat-card reveal">
+							<p class="stat-num"><span class="counter" data-target="296">0</span></p>
+							<p class="stat-label">عميل سعيد</p>
+						</article>
+						<article class="stat-card reveal">
+							<p class="stat-num"><span class="counter" data-target="93">0</span></p>
+							<p class="stat-label">تصاميم خاصة</p>
+						</article>
+						<article class="stat-card reveal">
+							<p class="stat-num"><span class="counter" data-target="98">0</span>%</p>
+							<p class="stat-label">رضا العملاء</p>
+						</article>
+                    </div>
+                </div>
+		</section>
+
+		<section class="section" id="portfolio">
+			<canvas id="portfolio-canvas" aria-hidden="true"></canvas>
+			<div class="container">
+				<div class="portfolio-head reveal" style="text-align: center; margin-bottom: 3.5rem;">
+					<span class="about-eyebrow" style="color: var(--gold);">أعمالنا</span>
+					<h2 class="section-title" style="color: #fff;">أحدث التصاميم والمشاريع</h2>
+					<p class="section-text" style="margin: 0 auto;">نستعرض لك مجموعة من أهم مشاريعنا الحديثة في تصميم المطابخ والأثاث، بأعلى معايير الدقة والجمال.</p>
+				</div>
+
+				<div class="portfolio-grid">
+					<article class="portfolio-item reveal" style="transition-delay: 0.1s">
+						<img src="./media/معرض الأعمال/IMG_7413.jpeg" alt="Country Collection" loading="lazy" decoding="async" />
+						<div class="portfolio-icon" onclick="openLightbox('./media/معرض الأعمال/IMG_7413.jpeg', 'Country Collection')" title="تكبير الصورة">
+							<svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+						</div>
+						<div class="portfolio-label">Country Collection</div>
+					</article>
+					<article class="portfolio-item reveal" style="transition-delay: 0.2s">
+						<img src="./media/معرض الأعمال/IMG_7414.jpeg" alt="Concord Collection" loading="lazy" decoding="async" />
+						<div class="portfolio-icon" onclick="openLightbox('./media/معرض الأعمال/IMG_7414.jpeg', 'Concord Collection')" title="تكبير الصورة">
+							<svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+						</div>
+						<div class="portfolio-label">Concord Collection</div>
+					</article>
+					<article class="portfolio-item reveal" style="transition-delay: 0.3s">
+						<img src="./media/معرض الأعمال/IMG_7415.jpeg" alt="Classic Collection" loading="lazy" decoding="async" />
+						<div class="portfolio-icon" onclick="openLightbox('./media/معرض الأعمال/IMG_7415.jpeg', 'Classic Collection')" title="تكبير الصورة">
+							<svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+						</div>
+						<div class="portfolio-label">Classic Collection</div>
+					</article>
+					<article class="portfolio-item reveal" style="transition-delay: 0.4s">
+						<img src="./media/معرض الأعمال/IMG_7419.jpeg" alt="Luxor Collection" loading="lazy" decoding="async" />
+						<div class="portfolio-icon" onclick="openLightbox('./media/معرض الأعمال/IMG_7419.jpeg', 'Luxor Collection')" title="تكبير الصورة">
+							<svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+						</div>
+						<div class="portfolio-label">Luxor Collection</div>
+					</article>
+					<article class="portfolio-item reveal" style="transition-delay: 0.5s">
+						<img src="./media/معرض الأعمال/IMG_7420.jpeg" alt="Modern Collection" loading="lazy" decoding="async" />
+						<div class="portfolio-icon" onclick="openLightbox('./media/معرض الأعمال/IMG_7420.jpeg', 'Modern Collection')" title="تكبير الصورة">
+							<svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+						</div>
+						<div class="portfolio-label">Modern Collection</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="services">
+			<div class="container">
+				<div class="marketing-grid">
+					<article class="marketing-card reveal">
+						<h2 class="section-title">ماذا نفعل</h2>
+						<p>
+							نقدم حلولاً متكاملة لتصميم وتنفيذ المطابخ والأثاث الداخلي بأسلوب عصري يجمع بين الجمال والعملية. فريقنا متخصص في تحويل المساحات إلى بيئات مثالية للعيش.
+						</p>
+						<p>
+							في جمان لا نكتفي بتصميم المطابخ فقط، بل نعيد صياغة المساحات بأسلوب يجمع بين الأناقة، العملية، وجودة التفاصيل. نؤمن أن المطبخ أكثر من مجرد مكان، لذلك نحرص على تقديم تصاميم عصرية تمنحك الراحة، التنظيم، وتجربة يومية تعكس ذوقك وأسلوب حياتك
+						</p>
+						<ul class="marketing-list">
+							<li style="color: var(--gold);">تصميم مخصص وفقاً لاحتياجاتك</li>
+							<li style="color: var(--gold);">تنفيذ احترافي بأعلى معايير الجودة</li>
+							<li style="color: var(--gold);">استشارات مجانية وتصاميم ثلاثية الأبعاد</li>
+							<li style="color: var(--gold);">حلول ذكية ومبتكرة لاستغلال المساحات بأفضل شكل ممكن</li>
+							<li style="color: var(--gold);">دمج مثالي بين الأناقة العصرية والعملية التي تناسب مساحتك</li>
+						</ul>
+					</article>
+					<div class="marketing-image reveal">
+						<img src="./media/marketingSection.jpeg" alt="تصميم داخلي مطبخ معاصر" loading="lazy" decoding="async" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="testimonials" class="section testimonials">
+			<canvas id="testimonials-canvas" aria-hidden="true"></canvas>
+			<div class="container testimonials-wrap">
+				<div class="reveal" style="text-align:center; max-width:700px; margin-inline:auto;">
+					<p class="eyebrow">آراء عملائنا</p>
+					<h2 class="section-title">ماذا يقول عملاؤنا؟</h2>
+					<p class="section-text" style="margin-inline:auto;">نفخر بثقة شركائنا، ونسعى دائماً لتقديم خدمات تتجاوز التوقعات وتحقق أهدافهم.</p>
+				</div>
+				
+				<div id="testimonialsCarousel" class="reveal">
+					<div style="overflow:hidden; border-radius:30px;">
+						<div id="testimonialsTrack">
+							<article class="testimonial-slide">
+								<blockquote class="testimonial-box">
+									<div class="testimonial-head">
+										<div class="avatar-group">
+											<div class="avatar" aria-hidden="true">01</div>
+											<div>
+												<h3 class="client-name">الاسم 1</h3>
+											</div>
+										</div>
+										<svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+											<path d="M7.17 6A5.001 5.001 0 002 11v7h7v-7H5.26A3.001 3.001 0 017.17 8H9V6H7.17zm10 0A5.001 5.001 0 0012 11v7h7v-7h-3.74A3.001 3.001 0 0117.17 8H19V6h-1.83z"/>
+										</svg>
+									</div>
+									<div class="stars">★★★★★</div>
+									<p class="testimonial-text">..........................................</p>
+								</blockquote>
+							</article>
+
+							<article class="testimonial-slide">
+								<blockquote class="testimonial-box">
+									<div class="testimonial-head">
+										<div class="avatar-group">
+											<div class="avatar" aria-hidden="true">02</div>
+											<div>
+												<h3 class="client-name">الاسم 2</h3>
+											</div>
+										</div>
+										<svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+											<path d="M7.17 6A5.001 5.001 0 002 11v7h7v-7H5.26A3.001 3.001 0 017.17 8H9V6H7.17zm10 0A5.001 5.001 0 0012 11v7h7v-7h-3.74A3.001 3.001 0 0117.17 8H19V6h-1.83z"/>
+										</svg>
+									</div>
+									<div class="stars">★★★★★</div>
+									<p class="testimonial-text">...............................................</p>
+								</blockquote>
+							</article>
+
+							<article class="testimonial-slide">
+								<blockquote class="testimonial-box">
+									<div class="testimonial-head">
+										<div class="avatar-group">
+											<div class="avatar" aria-hidden="true">03</div>
+											<div>
+												<h3 class="client-name">الاسم 3</h3>
+											</div>
+										</div>
+										<svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+											<path d="M7.17 6A5.001 5.001 0 002 11v7h7v-7H5.26A3.001 3.001 0 017.17 8H9V6H7.17zm10 0A5.001 5.001 0 0012 11v7h7v-7h-3.74A3.001 3.001 0 0117.17 8H19V6h-1.83z"/>
+										</svg>
+									</div>
+									<div class="stars">★★★★★</div>
+									<p class="testimonial-text">................................................</p>
+								</blockquote>
+							</article>
+							<article class="testimonial-slide">
+								<blockquote class="testimonial-box">
+									<div class="testimonial-head">
+										<div class="avatar-group">
+											<div class="avatar" aria-hidden="true">03</div>
+											<div>
+												<h3 class="client-name">الاسم 4</h3>
+											</div>
+										</div>
+										<svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+											<path d="M7.17 6A5.001 5.001 0 002 11v7h7v-7H5.26A3.001 3.001 0 017.17 8H9V6H7.17zm10 0A5.001 5.001 0 0012 11v7h7v-7h-3.74A3.001 3.001 0 0117.17 8H19V6h-1.83z"/>
+										</svg>
+									</div>
+									<div class="stars">★★★★★</div>
+									<p class="testimonial-text">................................................</p>
+								</blockquote>
+							</article>
+							<article class="testimonial-slide">
+								<blockquote class="testimonial-box">
+									<div class="testimonial-head">
+										<div class="avatar-group">
+											<div class="avatar" aria-hidden="true">03</div>
+											<div>
+												<h3 class="client-name">الاسم 5</h3>
+											</div>
+										</div>
+										<svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+											<path d="M7.17 6A5.001 5.001 0 002 11v7h7v-7H5.26A3.001 3.001 0 017.17 8H9V6H7.17zm10 0A5.001 5.001 0 0012 11v7h7v-7h-3.74A3.001 3.001 0 0117.17 8H19V6h-1.83z"/>
+										</svg>
+									</div>
+									<div class="stars">★★★★★</div>
+									<p class="testimonial-text">................................................</p>
+								</blockquote>
+							</article>
+						</div>
+					</div>
+
+					<div class="testimonial-controls">
+						<button id="testimonialPrev" class="nav-btn" aria-label="السابق">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg>
+						</button>
+						<div id="testimonialDots"></div>
+						<button id="testimonialNext" class="nav-btn" aria-label="التالي">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path stroke-linecap="round" stroke-linejoin="round" d="M15 18l-6-6 6-6"/></svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section" id="contact">
+			<div class="container contact-wrap">
+				<aside class="contact-card reveal">
+					<h2 class="section-title">تواصل معنا</h2>
+					<p class="section-text">اترك بياناتك وسنقوم بالتواصل معك لتقديم عرض مناسب لمساحتك واحتياجك.</p>
+					<div class="contact-list">
+						<div class="contact-item">
+							<p class="contact-label">العنوان</p>
+							<p>رام الله - بيتونيا - شارع بيتونيا الرئيسي فرع الخليل - شارع نمرة - بجانب فندق ابو مازن</p>
+						</div>
+						<div class="contact-item">
+							<p class="contact-label">الهاتف</p>
+							<p dir="ltr">+970 XX XXX XXXX</p>
+						</div>
+						<div class="contact-item">
+							<p class="contact-label">البريد الإلكتروني</p>
+							<p>info@example.com</p>
+						</div>
+					</div>
+				</aside>
+
+				<form class="contact-form reveal" id="leadForm">
+					<div class="form-grid">
+						<div class="field">
+							<label for="name">الاسم</label>
+							<input id="name" name="name" type="text" placeholder="اكتب اسمك الكامل" required />
+						</div>
+						<div class="field">
+							<label for="phone">رقم الهاتف</label>
+							<input id="phone" name="phone" type="tel" placeholder="05XXXXXXXX" required />
+						</div>
+						<div class="field">
+							<label for="message">الرسالة</label>
+							<textarea id="message" name="message" rows="5" placeholder="صف مشروعك بشكل مختصر" required></textarea>
+						</div>
+						<button type="submit" class="btn btn-gold">إرسال الطلب</button>
+						<p class="form-note" id="formNote">نستخدم هذه البيانات فقط للتواصل بخصوص طلبك.</p>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<!-- Confetti canvas for visual effects -->
+	<canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+	<footer class="footer">
+		<div class="container">
+			<!-- Brand & About -->
+			<div class="footer-col">
+				<img src="./media/logo.png" alt="شعار جمان" class="footer-logo" />
+				<div class="social-links">
+					<a href="#" title="فيسبوك" aria-label="فيسبوك" class="social-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/>
+                        </svg>
+                    </a>
+					<a href="#" title="إنستغرام" aria-label="إنستغرام" class="social-icon">
+						<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.204-.012 3.584-.07 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.849.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.322a1.44 1.44 0 110.002-2.88 1.44 1.44 0 010 2.88z"/></svg>
+					</a>
+					<a href="#" title="واتس أب" aria-label="واتس أب" class="social-icon">
+						<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.02 1.01 4.34L2.05 22l5.5-1.68C9.46 22.09 10.7 22.5 12 22.5c5.52 0 10-4.48 10-10S17.52 2 12 2m0 18.3c-1.08 0-2.13-.25-3.08-.71l-.22-.12-2.28.7.71-2.31-.13-.21C3.88 15.19 3.7 13.64 3.7 12c0-4.59 3.71-8.3 8.3-8.3 4.59 0 8.3 3.71 8.3 8.3s-3.71 8.3-8.3 8.3m4.43-6.2c-.24-.12-1.44-.71-1.67-.79-.23-.09-.39-.14-.56.14-.17.28-.66.79-.81.95-.15.17-.3.19-.54.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.02-.37.1-.49.1-.1.24-.26.36-.39.12-.13.16-.23.25-.38.09-.15.04-.28-.02-.39-.07-.11-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.16 0-.43.06-.66.3-.22.24-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.74 2.65 4.2 3.72.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/></svg>
+					</a>
+					<a href="mailto:info@jaman.com" title="البريد الإلكتروني" aria-label="البريد الإلكتروني" class="social-icon">
+						<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+					</a>
+				</div>
+			</div>
+
+			<!-- Quick Links -->
+			<div class="footer-col">
+				<h3>الروابط السريعة</h3>
+				<ul>
+					<li><a href="#home">الرئيسية</a></li>
+					<li><a href="#about">عن الشركة</a></li>
+					<li><a href="#portfolio">أعمالنا</a></li>
+					<li><a href="#testimonials">آراء العملاء</a></li>
+				</ul>
+			</div>
+
+			<!-- Services -->
+			<div class="footer-col">
+				<h3>خدماتنا</h3>
+				<ul>
+					<li><a href="#">تصميم المطابخ</a></li>
+					<li><a href="#">الأثاث المخصص</a></li>
+					<li><a href="#">الاستشارات</a></li>
+					<li><a href="#">التنفيذ والتركيب</a></li>
+				</ul>
+			</div>
+
+			<!-- Contact -->
+			<div class="footer-col">
+				<h3>تواصل معنا</h3>
+				<ul>
+					<li><a href="tel:+966501234567">+966 00000000</a></li>
+					<li><a href="mailto:info@jaman.com">info@jaman.com</a></li>
+					<li><a href="#">الموقع الجغرافي</a></li>
+					<li><a href="#">ساعات العمل</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Bottom Section -->
+		<div class="footer-bottom">
+			<p>&copy; 2024-2026 جمان للأثاث والمطابخ - جميع الحقوق محفوظة</p>
+			<div style="display: flex; gap: 2rem; font-size: 0.85rem;">
+				<a href="#" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--gold-soft)'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">سياسة الخصوصية</a>
+				<a href="#" style="color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='var(--gold-soft)'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">شروط الاستخدام</a>
+			</div>
+		</div>
+
+		<!-- Developer Credit Badge -->
+		<div class="footer-dev-credit">
+			<a href="https://wa.me/201032304640" target="_blank" rel="noopener noreferrer" class="dev-badge" title="تواصل مع المهندس رحيم عبر واتساب">
+				<span class="dev-text">تصميم وتطوير <strong class="dev-name">م. رحيم</strong></span>
+				<span class="dev-sep">▪</span>
+				<span class="dev-phone" dir="ltr">+20 103 230 4640</span>
+				<svg class="dev-wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+					<path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.11 6.88C8.94 6.88 8.66 6.94 8.43 7.19C8.2 7.44 7.55 8.05 7.55 9.29C7.55 10.53 8.46 11.73 8.59 11.9C8.72 12.07 10.38 14.63 12.91 15.72C15.01 16.63 15.44 16.45 15.9 16.41C16.36 16.37 17.38 15.81 17.59 15.22C17.8 14.63 17.8 14.12 17.74 14.02C17.68 13.92 17.52 13.86 17.28 13.74C17.04 13.62 15.86 13.04 15.64 12.96C15.42 12.88 15.26 12.84 15.1 13.08C14.94 13.32 14.48 13.86 14.34 14.02C14.2 14.18 14.06 14.2 13.82 14.08C13.58 13.96 12.81 13.71 11.9 12.9C11.19 12.27 10.71 11.49 10.57 11.25C10.43 11.01 10.56 10.88 10.68 10.76C10.79 10.65 10.92 10.48 11.04 10.34C11.16 10.2 11.2 10.1 11.28 9.94C11.36 9.78 11.32 9.64 11.26 9.52C11.2 9.4 10.74 8.27 10.55 7.8C10.36 7.35 10.17 7.41 10.03 7.41H9.57C9.41 7.41 9.17 7.47 8.94 7.72C8.71 7.97 8.06 8.58 8.06 9.82"/>
+				</svg>
+			</a>
+		</div>
+	</footer>
+
+	<!-- Lightbox Container -->
+	<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+		<div class="lightbox-content">
+			<span class="lightbox-close" onclick="closeLightbox(event)" title="إغلاق">&times;</span>
+			<img id="lightbox-img" src="" alt="التصميم المكبّر" />
+			<div id="lightbox-title" class="lightbox-title"></div>
+		</div>
+	</div>
+
+	<script>
+		function openLightbox(src, titleText) {
+			const lightbox = document.getElementById('lightbox');
+			const lightboxImg = document.getElementById('lightbox-img');
+			const lightboxTitle = document.getElementById('lightbox-title');
+			
+			lightboxImg.src = src;
+			lightboxTitle.innerText = titleText;
+			lightbox.classList.add('active');
+			document.body.style.overflow = 'hidden'; // المنع من التمرير أثناء الفتح
+		}
+
+		function closeLightbox(event) {
+			// إغلاق النافذة فقط إذا تم النقر على الخلفية أو علامة الإغلاق (ليس الصورة نفسها)
+			if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+				document.getElementById('lightbox').classList.remove('active');
+				document.body.style.overflow = 'auto'; // إعادة التمرير
+			}
+		}
+
+		const topbar = document.getElementById('topbar');
+		window.addEventListener('scroll', () => {
+			topbar.classList.toggle('scrolled', window.scrollY > 10);
+		}, { passive: true });
+
+		/* Mobile nav toggle behavior */
+		const navToggle = document.getElementById('navToggle');
+		if (navToggle) {
+			navToggle.addEventListener('click', () => topbar.classList.toggle('nav-open'));
+			document.querySelectorAll('.nav-links a').forEach((a) => {
+				a.addEventListener('click', () => topbar.classList.remove('nav-open'));
+			});
+		}
+
+		const revealElements = Array.from(document.querySelectorAll('.reveal'));
+		const revealObserver = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+					revealObserver.unobserve(entry.target);
+				}
+			});
+		}, { threshold: 0.18 });
+		revealElements.forEach((el) => revealObserver.observe(el));
+
+		const counters = Array.from(document.querySelectorAll('.counter'));
+		const animateCounter = (el) => {
+			const target = Number(el.dataset.target || 0);
+			const duration = 1500;
+			const startTime = performance.now();
+
+			const step = (time) => {
+				const progress = Math.min((time - startTime) / duration, 1);
+				const eased = 1 - Math.pow(1 - progress, 3);
+				el.textContent = Math.floor(target * eased).toString();
+				if (progress < 1) {
+					requestAnimationFrame(step);
+				} else {
+					el.textContent = target.toString();
+					// mark parent so we can trigger a finished animation
+					const parentCard = el.closest('.stat-card, .stat-box');
+					if (parentCard) {
+						parentCard.classList.add('count-done');
+						try { triggerConfetti(parentCard); } catch(e){}
+					}
+				}
+			};
+
+			requestAnimationFrame(step);
+		};
+
+		let countersStarted = false;
+		// Observe the container that holds the counters. Prefer .stats-grid (moved into About),
+		// otherwise fall back to the #about section.
+		const countersContainer = document.querySelector('.stats-grid') || document.getElementById('about');
+		if (countersContainer) {
+			const countersObserver = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting && !countersStarted) {
+						countersStarted = true;
+						counters.forEach(animateCounter);
+						countersObserver.unobserve(entry.target);
+					}
+				});
+			}, { threshold: 0.3 });
+			countersObserver.observe(countersContainer);
+		}
+
+		// Separate observer for about-stat box (24 years counter) - starts immediately when visible
+		const aboutStatBox = document.querySelector('.about-stat');
+		if (aboutStatBox) {
+			const aboutStatCounter = Array.from(aboutStatBox.querySelectorAll('.counter'));
+			let aboutStatStarted = false;
+			const aboutStatObserver = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting && !aboutStatStarted) {
+						aboutStatStarted = true;
+						aboutStatCounter.forEach(animateCounter);
+						aboutStatObserver.unobserve(entry.target);
+					}
+				});
+			}, { threshold: 0.1 });
+			aboutStatObserver.observe(aboutStatBox);
+		}
+
+		const testimonialsTrack = document.getElementById('testimonialsTrack');
+		const testimonialSlides = Array.from(document.querySelectorAll('.testimonial-slide'));
+		const testimonialPrev = document.getElementById('testimonialPrev');
+		const testimonialNext = document.getElementById('testimonialNext');
+		const testimonialDots = document.getElementById('testimonialDots');
+		const testimonialCarousel = document.getElementById('testimonialsCarousel');
+
+		let testimonialIndex = 0;
+		let testimonialTimer;
+		const TESTIMONIAL_AUTOPLAY_DELAY = 9000;
+
+		const renderTestimonialDots = () => {
+			testimonialDots.innerHTML = testimonialSlides.map((_, i) => (
+				`<button class="${i === testimonialIndex ? 'active' : ''}" data-dot="${i}" aria-label="الانتقال إلى الشهادة ${i + 1}"></button>`
+			)).join('');
+
+			testimonialDots.querySelectorAll('button').forEach((dot) => {
+				dot.addEventListener('click', () => {
+					testimonialIndex = Number(dot.dataset.dot);
+					updateTestimonials();
+					resetTestimonialsAutoplay();
+				});
+			});
+		};
+
+		const updateTestimonials = () => {
+			testimonialsTrack.style.transform = `translateX(${testimonialIndex * 100}%)`;
+			renderTestimonialDots();
+		};
+
+		const nextTestimonial = () => {
+			testimonialIndex = (testimonialIndex + 1) % testimonialSlides.length;
+			updateTestimonials();
+		};
+
+		const prevTestimonial = () => {
+			testimonialIndex = (testimonialIndex - 1 + testimonialSlides.length) % testimonialSlides.length;
+			updateTestimonials();
+		};
+
+		const startTestimonialsAutoplay = () => {
+			if (testimonialSlides.length < 2) return;
+			testimonialTimer = setInterval(nextTestimonial, TESTIMONIAL_AUTOPLAY_DELAY);
+		};
+
+		const resetTestimonialsAutoplay = () => {
+			clearInterval(testimonialTimer);
+			startTestimonialsAutoplay();
+		};
+
+		testimonialPrev.addEventListener('click', () => {
+			prevTestimonial();
+			resetTestimonialsAutoplay();
+		});
+
+		testimonialNext.addEventListener('click', () => {
+			nextTestimonial();
+			resetTestimonialsAutoplay();
+		});
+
+		testimonialCarousel.addEventListener('mouseenter', () => clearInterval(testimonialTimer));
+		testimonialCarousel.addEventListener('mouseleave', startTestimonialsAutoplay);
+
+		updateTestimonials();
+
+
+
+		// --- Simple confetti particles (no external lib) ---
+		function triggerConfetti(targetEl) {
+			const canvas = document.getElementById('confetti-canvas');
+			if (!canvas) return;
+			const ctx = canvas.getContext('2d');
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+
+			const rect = targetEl.getBoundingClientRect();
+			const originX = rect.left + rect.width / 2;
+			const originY = rect.top + rect.height / 2;
+
+			const colors = ['#d4b27c', '#b08a51', '#fff5e6', '#ffd98a'];
+			const particles = Array.from({ length: 32 }).map(() => ({
+				x: originX,
+				y: originY,
+				r: 4 + Math.random() * 6,
+				c: colors[Math.floor(Math.random() * colors.length)],
+				t: Math.random() * Math.PI * 2,
+				v: 2 + Math.random() * 6,
+				g: 0.02 + Math.random() * 0.06,
+			}));
+
+			let t0 = null;
+			function frame(ts) {
+				if (!t0) t0 = ts;
+				const dt = (ts - t0) / 1000;
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				particles.forEach((p, i) => {
+					p.x += Math.cos(p.t) * p.v;
+					p.y += Math.sin(p.t) * p.v + p.g * dt * 60;
+					p.t += 0.06;
+					ctx.beginPath();
+					ctx.fillStyle = p.c;
+					ctx.fillRect(p.x, p.y, p.r, p.r);
+				});
+				if (dt < 1.2) requestAnimationFrame(frame);
+				else ctx.clearRect(0,0,canvas.width,canvas.height);
+			}
+			requestAnimationFrame(frame);
+		}
+		startTestimonialsAutoplay();
+
+		const leadForm = document.getElementById('leadForm');
+		const formNote = document.getElementById('formNote');
+		leadForm.addEventListener('submit', (event) => {
+			event.preventDefault();
+			formNote.textContent = 'تم استلام طلبك بنجاح. سنتواصل معك قريبًا.';
+			formNote.style.color = '#3f6a34';
+			leadForm.reset();
+		});
+
+		// --- Interactive Network Animation in Portfolio ---
+		const portfolioCanvas = document.getElementById('portfolio-canvas');
+		const portfolioSection = document.getElementById('portfolio');
+		if (portfolioCanvas && portfolioSection) {
+			const ctx = portfolioCanvas.getContext('2d');
+			let particles = [];
+			let mouseX = 0;
+			let mouseY = -1000;
+			const PARTICLE_COUNT = 40;
+			const CONNECTION_DISTANCE = 150;
+			const PARTICLE_SIZE = 2;
+
+			// Set canvas size
+			function resizePortfolioCanvas() {
+				portfolioCanvas.width = portfolioSection.offsetWidth;
+				portfolioCanvas.height = portfolioSection.offsetHeight;
+			}
+			resizePortfolioCanvas();
+			window.addEventListener('resize', resizePortfolioCanvas);
+
+			// Create particles
+			function initParticles() {
+				particles = Array.from({ length: PARTICLE_COUNT }).map(() => ({
+					x: Math.random() * portfolioCanvas.width,
+					y: Math.random() * portfolioCanvas.height,
+					vx: (Math.random() - 0.5) * 0.5,
+					vy: (Math.random() - 0.5) * 0.5,
+				}));
+			}
+			initParticles();
+
+			// Draw network
+			function drawNetwork() {
+				ctx.clearRect(0, 0, portfolioCanvas.width, portfolioCanvas.height);
+
+				// Update particles
+				particles.forEach((p) => {
+					p.x += p.vx;
+					p.y += p.vy;
+
+					// Bounce off walls
+					if (p.x < 0 || p.x > portfolioCanvas.width) p.vx *= -1;
+					if (p.y < 0 || p.y > portfolioCanvas.height) p.vy *= -1;
+					p.x = Math.max(0, Math.min(portfolioCanvas.width, p.x));
+					p.y = Math.max(0, Math.min(portfolioCanvas.height, p.y));
+
+					// Attract to mouse
+					const dx = mouseX - p.x;
+					const dy = mouseY - p.y;
+					const dist = Math.sqrt(dx * dx + dy * dy);
+					if (dist < 200 && dist > 0) {
+						p.vx += (dx / dist) * 0.15;
+						p.vy += (dy / dist) * 0.15;
+					}
+
+					// Damping
+					p.vx *= 0.96;
+					p.vy *= 0.96;
+				});
+
+				// Draw connections
+				ctx.strokeStyle = 'rgba(212, 178, 124, 0.2)';
+				ctx.lineWidth = 1;
+				for (let i = 0; i < particles.length; i++) {
+					for (let j = i + 1; j < particles.length; j++) {
+						const dx = particles[j].x - particles[i].x;
+						const dy = particles[j].y - particles[i].y;
+						const dist = Math.sqrt(dx * dx + dy * dy);
+						if (dist < CONNECTION_DISTANCE) {
+							const alpha = 1 - dist / CONNECTION_DISTANCE;
+							ctx.strokeStyle = `rgba(212, 178, 124, ${0.2 * alpha})`;
+							ctx.beginPath();
+							ctx.moveTo(particles[i].x, particles[i].y);
+							ctx.lineTo(particles[j].x, particles[j].y);
+							ctx.stroke();
+						}
+					}
+				}
+
+				// Draw particles
+				ctx.fillStyle = 'rgba(212, 178, 124, 0.8)';
+				particles.forEach((p) => {
+					ctx.beginPath();
+					ctx.arc(p.x, p.y, PARTICLE_SIZE, 0, Math.PI * 2);
+					ctx.fill();
+				});
+
+				requestAnimationFrame(drawNetwork);
+			}
+			drawNetwork();
+
+			// Track mouse/touch movement
+			function updateMousePos(x, y) {
+				const rect = portfolioSection.getBoundingClientRect();
+				mouseX = x - rect.left;
+				mouseY = y - rect.top;
+			}
+
+			document.addEventListener('mousemove', (e) => {
+				const rect = portfolioSection.getBoundingClientRect();
+				if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
+					updateMousePos(e.clientX, e.clientY);
+				}
+			});
+
+			document.addEventListener('touchmove', (e) => {
+				if (e.touches.length > 0) {
+					const rect = portfolioSection.getBoundingClientRect();
+					const touch = e.touches[0];
+					if (touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
+						updateMousePos(touch.clientX, touch.clientY);
+					}
+				}
+			}, { passive: true });
+		}
+
+		// --- Interactive Network Animation in Testimonials ---
+		const testimonialsCanvas = document.getElementById('testimonials-canvas');
+		const testimonialsSection = document.getElementById('testimonials');
+		if (testimonialsCanvas && testimonialsSection) {
+			const ctx = testimonialsCanvas.getContext('2d');
+			let particles = [];
+			let mouseX = 0;
+			let mouseY = -1000;
+			const PARTICLE_COUNT = 35;
+			const CONNECTION_DISTANCE = 140;
+			const PARTICLE_SIZE = 2;
+
+			// Set canvas size
+			function resizeTestimonialsCanvas() {
+				testimonialsCanvas.width = testimonialsSection.offsetWidth;
+				testimonialsCanvas.height = testimonialsSection.offsetHeight;
+			}
+			resizeTestimonialsCanvas();
+			window.addEventListener('resize', resizeTestimonialsCanvas);
+
+			// Create particles
+			function initParticles() {
+				particles = Array.from({ length: PARTICLE_COUNT }).map(() => ({
+					x: Math.random() * testimonialsCanvas.width,
+					y: Math.random() * testimonialsCanvas.height,
+					vx: (Math.random() - 0.5) * 0.5,
+					vy: (Math.random() - 0.5) * 0.5,
+				}));
+			}
+			initParticles();
+
+			// Draw network
+			function drawNetwork() {
+				ctx.clearRect(0, 0, testimonialsCanvas.width, testimonialsCanvas.height);
+
+				// Update particles
+				particles.forEach((p) => {
+					p.x += p.vx;
+					p.y += p.vy;
+
+					// Bounce off walls
+					if (p.x < 0 || p.x > testimonialsCanvas.width) p.vx *= -1;
+					if (p.y < 0 || p.y > testimonialsCanvas.height) p.vy *= -1;
+					p.x = Math.max(0, Math.min(testimonialsCanvas.width, p.x));
+					p.y = Math.max(0, Math.min(testimonialsCanvas.height, p.y));
+
+					// Attract to mouse
+					const dx = mouseX - p.x;
+					const dy = mouseY - p.y;
+					const dist = Math.sqrt(dx * dx + dy * dy);
+					if (dist < 200 && dist > 0) {
+						p.vx += (dx / dist) * 0.15;
+						p.vy += (dy / dist) * 0.15;
+					}
+
+					// Damping
+					p.vx *= 0.96;
+					p.vy *= 0.96;
+				});
+
+				// Draw connections
+				ctx.strokeStyle = 'rgba(212, 178, 124, 0.2)';
+				ctx.lineWidth = 1;
+				for (let i = 0; i < particles.length; i++) {
+					for (let j = i + 1; j < particles.length; j++) {
+						const dx = particles[j].x - particles[i].x;
+						const dy = particles[j].y - particles[i].y;
+						const dist = Math.sqrt(dx * dx + dy * dy);
+						if (dist < CONNECTION_DISTANCE) {
+							const alpha = 1 - dist / CONNECTION_DISTANCE;
+							ctx.strokeStyle = `rgba(212, 178, 124, ${0.2 * alpha})`;
+							ctx.beginPath();
+							ctx.moveTo(particles[i].x, particles[i].y);
+							ctx.lineTo(particles[j].x, particles[j].y);
+							ctx.stroke();
+						}
+					}
+				}
+
+				// Draw particles
+				ctx.fillStyle = 'rgba(212, 178, 124, 0.8)';
+				particles.forEach((p) => {
+					ctx.beginPath();
+					ctx.arc(p.x, p.y, PARTICLE_SIZE, 0, Math.PI * 2);
+					ctx.fill();
+				});
+
+				requestAnimationFrame(drawNetwork);
+			}
+			drawNetwork();
+
+			// Track mouse/touch movement
+			function updateMousePos(x, y) {
+				const rect = testimonialsSection.getBoundingClientRect();
+				mouseX = x - rect.left;
+				mouseY = y - rect.top;
+			}
+
+			document.addEventListener('mousemove', (e) => {
+				const rect = testimonialsSection.getBoundingClientRect();
+				if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
+					updateMousePos(e.clientX, e.clientY);
+				}
+			});
+
+			document.addEventListener('touchmove', (e) => {
+				if (e.touches.length > 0) {
+					const rect = testimonialsSection.getBoundingClientRect();
+					const touch = e.touches[0];
+					if (touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
+						updateMousePos(touch.clientX, touch.clientY);
+					}
+				}
+			}, { passive: true });
+		}
+	</script>
+</body>
+</html>
